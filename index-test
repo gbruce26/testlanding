@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Style for the form container */
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        /* Style for the form */
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        /* Style for form input fields */
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style for the submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Style for table header */
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Style for table header */
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for background gradient */
+        body {
+            background-image: linear-gradient(to bottom right, #8A2BE2, #FF1493);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign up</h2>
+        <form id="signup-form">
+            <input type="text" id="first-name" placeholder="First Name" required>
+            <input type="text" id="last-name" placeholder="Last Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="submit" value="Submit">
+        </form>
+        <h2>Registered Users</h2>
+        <table id="user-table">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function submitForm(event) {
+            event.preventDefault();
+            // Get form values
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            // Create table row with form values
+            var table = document.getElementById("user-table");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3
